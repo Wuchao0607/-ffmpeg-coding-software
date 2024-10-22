@@ -1,0 +1,640 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1282</width>
+    <height>880</height>
+   </rect>
+  </property>
+  <property name="tabletTracking">
+   <bool>true</bool>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="tabWidget">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>1251</width>
+      <height>821</height>
+     </rect>
+    </property>
+    <property name="currentIndex">
+     <number>1</number>
+    </property>
+    <widget class="QWidget" name="tabWidgetPage1">
+     <attribute name="title">
+      <string>视频播放</string>
+     </attribute>
+     <widget class="QWidget" name="horizontalLayoutWidget_5">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>10</y>
+        <width>451</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_5">
+       <item>
+        <widget class="QLabel" name="label1_2">
+         <property name="text">
+          <string>选择播放的视频：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="playInput"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="playscanButton">
+         <property name="text">
+          <string>浏览</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="playButton">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>750</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>播放</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="stopButton">
+      <property name="geometry">
+       <rect>
+        <x>700</x>
+        <y>750</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>暂停/继续</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="verticalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>1141</width>
+        <height>651</height>
+       </rect>
+      </property>
+      <layout class="QVBoxLayout" name="playLayout"/>
+     </widget>
+     <widget class="QLabel" name="videoNowTime">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>720</y>
+        <width>51</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>00：00</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="videoEndTime">
+      <property name="geometry">
+       <rect>
+        <x>1190</x>
+        <y>710</y>
+        <width>51</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QSlider" name="videoslider">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>720</y>
+        <width>1101</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="maximum">
+       <number>100</number>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="videoInfo">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>691</width>
+        <height>31</height>
+       </rect>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabWidgetPage2">
+     <attribute name="title">
+      <string>编码</string>
+     </attribute>
+     <widget class="QWidget" name="formLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>250</y>
+        <width>501</width>
+        <height>161</height>
+       </rect>
+      </property>
+      <layout class="QFormLayout" name="formLayout">
+       <item row="0" column="0">
+        <widget class="QLabel" name="coder">
+         <property name="text">
+          <string>编码器：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QComboBox" name="code_type">
+         <item>
+          <property name="text">
+           <string>mpeg4</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>libx264</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>libx265</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="codeRate">
+         <property name="text">
+          <string>比特率（Kb/s）：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="code_rate"/>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="Qscale">
+         <property name="text">
+          <string>量化系数（1-31）：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="QscaleInput"/>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="resolution">
+         <property name="text">
+          <string>分辨率：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="frequency">
+         <property name="text">
+          <string>帧率：</string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="1">
+        <widget class="QLineEdit" name="frequencyInput"/>
+       </item>
+       <item row="3" column="1">
+        <widget class="QLineEdit" name="resolutionInput"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="RDresult">
+      <property name="geometry">
+       <rect>
+        <x>870</x>
+        <y>0</y>
+        <width>51</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RD曲线</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="RDLabel">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>60</y>
+        <width>661</width>
+        <height>471</height>
+       </rect>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::TabFocus</enum>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textFormat">
+       <enum>Qt::AutoText</enum>
+      </property>
+      <property name="scaledContents">
+       <bool>false</bool>
+      </property>
+      <property name="wordWrap">
+       <bool>false</bool>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="RDPlotButton">
+      <property name="geometry">
+       <rect>
+        <x>850</x>
+        <y>720</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>性能对比</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startbutton">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>750</y>
+        <width>93</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>开始编码</string>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="result">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>450</y>
+        <width>431</width>
+        <height>291</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="coderesult">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>420</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>编码结果：</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>60</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_2">
+       <item>
+        <widget class="QLabel" name="label1">
+         <property name="text">
+          <string>选择输入视频：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="input1"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="inputbutton">
+         <property name="text">
+          <string>浏览</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_4">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>100</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_4">
+       <item>
+        <widget class="QLabel" name="label2">
+         <property name="text">
+          <string>选择输出路径：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="input2"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="outputbutton">
+         <property name="text">
+          <string>浏览</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>140</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QLabel" name="filename">
+         <property name="text">
+          <string>文件名：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="filenameinput"/>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTextBrowser" name="compareResult">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>630</y>
+        <width>681</width>
+        <height>71</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="coder_1">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>30</y>
+        <width>60</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>编码器1：</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="coder_2">
+      <property name="geometry">
+       <rect>
+        <x>1010</x>
+        <y>30</y>
+        <width>60</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>编码器2：</string>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="code_type_1">
+      <property name="geometry">
+       <rect>
+        <x>640</x>
+        <y>30</y>
+        <width>111</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>mpeg4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>libx264</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>libx265</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QComboBox" name="code_type_2">
+      <property name="geometry">
+       <rect>
+        <x>1090</x>
+        <y>30</y>
+        <width>121</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <item>
+       <property name="text">
+        <string>mpeg4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>libx264</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>libx265</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_3">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_3">
+       <item>
+        <widget class="QLabel" name="label1_10">
+         <property name="text">
+          <string>选择功能：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="Function">
+         <item>
+          <property name="text">
+           <string>转码</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>编码</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="label1_9">
+         <property name="text">
+          <string>是否多视点</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QComboBox" name="Function_2">
+         <item>
+          <property name="text">
+           <string>否</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>是</string>
+          </property>
+         </item>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_10">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>180</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_30">
+       <item>
+        <widget class="QLabel" name="label3_8">
+         <property name="text">
+          <string>选择视频文件信息：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="inputInfo"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="inputInfoButton">
+         <property name="text">
+          <string>浏览</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="horizontalLayoutWidget_11">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>220</y>
+        <width>501</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout_31">
+       <item>
+        <widget class="QLabel" name="label3_9">
+         <property name="text">
+          <string>选择编码配置：</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLineEdit" name="encodeInfo"/>
+       </item>
+       <item>
+        <widget class="QPushButton" name="encodeInfoButton">
+         <property name="text">
+          <string>浏览</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QLabel" name="coderesult_2">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>600</y>
+        <width>141</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>对比结果：</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1282</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <property name="defaultUp">
+    <bool>false</bool>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
